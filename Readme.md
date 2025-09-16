@@ -18,3 +18,7 @@ Para limpar o prompt basta usar esses cmds:
 - clear
 - ctrl + L
 
+Comandos Git 
+- Git Log -> Mostra todo historico de commits daquele repositorio
+
+
