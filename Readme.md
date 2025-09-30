@@ -20,5 +20,15 @@ Para limpar o prompt basta usar esses cmds:
 
 Comandos Git 
 - Git Log -> Mostra todo historico de commits daquele repositorio
+- Git log --stat
+- Git Log --oneline
+- Git Diff
+- git ammend (Emendas commits)
+
+Deploy
+- Uso da vercel para que o deploy fique em links publicos 
+
+
+
 
 
