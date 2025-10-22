@@ -1,0 +1,25 @@
+FROM alpine:3.22
+
+RUN apk add --no-cache postgresql16 postgresql16-contrib su-exec bash
+
+ENV POSTGRES_USER=postgres \
+    POSTGRES_PASSWORD=nmng27 \
+    POSTGRES_DB=postgres \
+    PGDATA=/var/lib/postgresql/data
+
+RUN mkdir -p /run/postgresql && \
+    mkdir -p "$PGDATA" && \
+    chown -R postgres:postgres /run/postgresql "$PGDATA"
+
+USER postgres
+RUN initdb -D "$PGDATA"
+
+EXPOSE 5432
+CMD ["postgres", "-D", "/var/lib/postgresql/data"]
+RUN docker run -d \
+  --name postgres16 \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=postgres \
+  -e POSTGRES_DB=meubanco \
+  -p 5432:5432 \
+  postgres:16-alpine3.22

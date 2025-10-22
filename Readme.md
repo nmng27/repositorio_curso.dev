@@ -71,4 +71,7 @@ caso queira ver a requisição e a resposta completa
 curl http://localhost:3000/api/rota -v
 
 
+Para pegar a imagem que precisamos para subir o postgre basta:
+docker pull postgres:16.10-alpine3.22
+
 
